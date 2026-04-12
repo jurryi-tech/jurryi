@@ -1,0 +1,9 @@
+node_modules
+dist
+.env
+.env.*
+test
+*.test.ts
+jest.config.js
+tsconfig.json
+.git

@@ -1,0 +1,11 @@
+.gcloudignore
+.git
+.gitignore
+node_modules/
+test/
+*.test.ts
+jest.config.js
+.env
+.env.*
+dist/
+README.md
