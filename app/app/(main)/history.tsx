@@ -34,8 +34,12 @@ export default function HistoryScreen() {
 
   const handleOpenConversation = useCallback(
     async (conversation: Conversation) => {
-      await loadConversation(conversation._id);
-      router.push('/(main)/chat');
+      try {
+        await loadConversation(conversation._id);
+        router.push('/(main)/chat');
+      } catch {
+        // loadConversation sets error state in the store; no crash
+      }
     },
     [loadConversation, router],
   );
@@ -158,7 +162,7 @@ export default function HistoryScreen() {
     </View>
   );
 
-  if (isLoading && conversations.length === 0) {
+  if (isLoading && (!conversations || conversations.length === 0)) {
     return (
       <SafeAreaView style={styles.safeArea} edges={['top']}>
         <Appbar.Header style={styles.header} elevated>
@@ -176,12 +180,12 @@ export default function HistoryScreen() {
       </Appbar.Header>
 
       <FlatList
-        data={conversations}
+        data={conversations || []}
         renderItem={renderConversation}
         keyExtractor={(item) => item._id}
         contentContainerStyle={[
           styles.listContent,
-          conversations.length === 0 && styles.listContentEmpty,
+          (!conversations || conversations.length === 0) && styles.listContentEmpty,
         ]}
         ListEmptyComponent={renderEmptyState}
         refreshControl={

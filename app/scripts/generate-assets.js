@@ -1,5 +1,5 @@
 /**
- * Asset Generator for LegalSahay
+ * Asset Generator for Jurryi
  *
  * Run this script to generate placeholder app icons and splash screens.
  * Requirements: npm install sharp (run in app/ directory)

@@ -1,41 +1,41 @@
 # Terms of Service
 
-**LegalSahay**
+**Jurryi**
 
 **Last Updated: April 2026**
 
 ## 1. Acceptance of Terms
 
-By downloading, installing, or using the LegalSahay mobile application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.
+By downloading, installing, or using the Jurryi mobile application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.
 
 ## 2. Description of Service
 
-LegalSahay is an AI-powered mobile application designed to provide legal information and guidance to users in India. The App uses artificial intelligence to help users understand their legal rights, navigate legal processes, and access relevant legal resources in multiple Indian languages.
+Jurryi is an AI-powered mobile application designed to provide legal information and guidance to users in India. The App uses artificial intelligence to help users understand their legal rights, navigate legal processes, and access relevant legal resources in multiple Indian languages.
 
 ## 3. Important Disclaimers
 
 ### 3.1 Legal Information, Not Legal Advice
 
-**LegalSahay provides legal INFORMATION only and does NOT provide legal ADVICE.** There is an important distinction between the two:
+**Jurryi provides legal INFORMATION only and does NOT provide legal ADVICE.** There is an important distinction between the two:
 
 - **Legal information** is general factual information about the law, legal processes, rights, and procedures.
 - **Legal advice** is the application of law to a specific individual's particular circumstances by a qualified legal professional.
 
-The information provided by LegalSahay is for general informational and educational purposes only. It should not be construed as legal advice or a legal opinion on any specific facts or circumstances.
+The information provided by Jurryi is for general informational and educational purposes only. It should not be construed as legal advice or a legal opinion on any specific facts or circumstances.
 
 ### 3.2 Not a Substitute for Professional Legal Counsel
 
-**LegalSahay is not a substitute for consultation with a qualified advocate, lawyer, or legal professional.** If you require legal advice, you should consult with a licensed advocate who is qualified to practice in the relevant jurisdiction and area of law.
+**Jurryi is not a substitute for consultation with a qualified advocate, lawyer, or legal professional.** If you require legal advice, you should consult with a licensed advocate who is qualified to practice in the relevant jurisdiction and area of law.
 
 We strongly recommend that users verify any information obtained through the App with a qualified legal professional before taking any action based on such information.
 
 ### 3.3 No Attorney-Client Relationship
 
-**Use of LegalSahay does not create an attorney-client relationship, advocate-client relationship, or any other professional legal relationship between you and LegalSahay, its developers, operators, or affiliates.** No privileged or confidential relationship exists between you and the App.
+**Use of Jurryi does not create an attorney-client relationship, advocate-client relationship, or any other professional legal relationship between you and Jurryi, its developers, operators, or affiliates.** No privileged or confidential relationship exists between you and the App.
 
 ### 3.4 AI Limitations and Accuracy
 
-LegalSahay utilizes artificial intelligence to generate responses to legal queries. **AI-generated content may contain errors, inaccuracies, or outdated information.** Specifically:
+Jurryi utilizes artificial intelligence to generate responses to legal queries. **AI-generated content may contain errors, inaccuracies, or outdated information.** Specifically:
 
 - AI models may misinterpret questions or provide incomplete information.
 - Legal information may not reflect the most recent amendments, court decisions, or regulatory changes.
@@ -52,7 +52,7 @@ You agree to provide accurate and truthful information when using the App, inclu
 
 ### 4.2 Lawful Use
 
-You agree to use LegalSahay only for lawful purposes. You shall not use the App to:
+You agree to use Jurryi only for lawful purposes. You shall not use the App to:
 
 - Seek assistance in planning, committing, or concealing any illegal activity.
 - Harass, abuse, or threaten others.
@@ -67,13 +67,13 @@ You are responsible for maintaining the confidentiality of your account credenti
 
 ### 4.4 Age Requirement
 
-You must be at least 18 years of age to use LegalSahay. By using the App, you represent and warrant that you meet this age requirement.
+You must be at least 18 years of age to use Jurryi. By using the App, you represent and warrant that you meet this age requirement.
 
 ## 5. Intellectual Property
 
 ### 5.1 Ownership
 
-All content, features, and functionality of the App, including but not limited to text, graphics, logos, icons, software, and the overall design, are the property of LegalSahay and are protected by Indian and international intellectual property laws.
+All content, features, and functionality of the App, including but not limited to text, graphics, logos, icons, software, and the overall design, are the property of Jurryi and are protected by Indian and international intellectual property laws.
 
 ### 5.2 Limited License
 
@@ -112,7 +112,7 @@ Our total cumulative liability to you for all claims arising out of or relating 
 
 ## 7. Indemnification
 
-You agree to indemnify, defend, and hold harmless LegalSahay, its developers, operators, affiliates, and their respective directors, officers, employees, and agents from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:
+You agree to indemnify, defend, and hold harmless Jurryi, its developers, operators, affiliates, and their respective directors, officers, employees, and agents from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:
 
 - Your use of the App.
 - Your violation of these Terms.
@@ -143,7 +143,7 @@ Any disputes arising out of or relating to these Terms or your use of the App sh
 
 ### 9.3 Informal Resolution
 
-Before filing any formal legal action, you agree to attempt to resolve any dispute informally by contacting us at support@legalsahay.com. We will attempt to resolve the dispute informally within 30 days.
+Before filing any formal legal action, you agree to attempt to resolve any dispute informally by contacting us at support@jurryi.com. We will attempt to resolve the dispute informally within 30 days.
 
 ## 10. Severability
 
@@ -151,14 +151,14 @@ If any provision of these Terms is found to be unenforceable or invalid by a cou
 
 ## 11. Entire Agreement
 
-These Terms, together with our Privacy Policy, constitute the entire agreement between you and LegalSahay regarding your use of the App and supersede all prior agreements, understandings, and communications, whether written or oral.
+These Terms, together with our Privacy Policy, constitute the entire agreement between you and Jurryi regarding your use of the App and supersede all prior agreements, understandings, and communications, whether written or oral.
 
 ## 12. Contact Us
 
 If you have any questions or concerns about these Terms of Service, please contact us at:
 
-**Email**: support@legalsahay.com
+**Email**: support@jurryi.com
 
 ---
 
-By using LegalSahay, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+By using Jurryi, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.

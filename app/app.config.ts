@@ -18,14 +18,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   ios: {
     supportsTablet: true,
-    bundleIdentifier: 'com.legalsahay.app',
+    bundleIdentifier: 'com.jurryi.app',
   },
   android: {
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon.png',
       backgroundColor: '#1a237e',
     },
-    package: 'com.legalsahay.app',
+    package: 'com.jurryi.app',
     versionCode: 1,
     permissions: ['INTERNET'],
   },

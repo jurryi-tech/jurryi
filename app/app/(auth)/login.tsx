@@ -68,7 +68,7 @@ export default function LoginScreen() {
             <View style={styles.logoCircle}>
               <IconButton icon="scale-balance" size={40} iconColor="#ffffff" />
             </View>
-            <Text style={styles.brandTitle}>LegalSahay</Text>
+            <Text style={styles.brandTitle}>Jurryi</Text>
             <Text style={styles.brandSubtitle}>Your Personal Legal Assistant</Text>
           </View>
 

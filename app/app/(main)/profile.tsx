@@ -204,7 +204,19 @@ export default function ProfileScreen() {
   };
 
   if (!user) {
-    return null;
+    return (
+      <SafeAreaView style={styles.safeArea} edges={['top']}>
+        <Appbar.Header style={styles.header} elevated>
+          <Appbar.Content title="Profile" titleStyle={styles.headerTitle} />
+        </Appbar.Header>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <ActivityIndicator size="large" color={COLORS.primary} />
+          <Text style={{ marginTop: 12, fontSize: 14, color: '#757575' }}>
+            Loading profile...
+          </Text>
+        </View>
+      </SafeAreaView>
+    );
   }
 
   return (

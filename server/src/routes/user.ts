@@ -86,7 +86,9 @@ router.get('/profile', async (req: AuthRequest, res: Response) => {
       return;
     }
 
-    res.json(user);
+    // Strip sensitive fields before returning
+    const { passwordHash, refreshToken, ...safeUser } = user;
+    res.json(safeUser);
   } catch (error) {
     console.error('Get profile error:', error);
     res.status(500).json({ error: 'Internal server error' });
@@ -138,7 +140,9 @@ router.patch('/profile', async (req: AuthRequest, res: Response) => {
       return;
     }
 
-    res.json(user);
+    // Strip sensitive fields before returning
+    const { passwordHash, refreshToken, ...safeUser } = user;
+    res.json(safeUser);
   } catch (error) {
     console.error('Update profile error:', error);
     res.status(500).json({ error: 'Internal server error' });
@@ -183,7 +187,9 @@ router.post('/onboarding', async (req: AuthRequest, res: Response) => {
       return;
     }
 
-    res.json(user);
+    // Strip sensitive fields before returning
+    const { passwordHash, refreshToken, ...safeUser } = user;
+    res.json(safeUser);
   } catch (error) {
     console.error('Onboarding error:', error);
     res.status(500).json({ error: 'Internal server error' });

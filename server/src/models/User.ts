@@ -108,6 +108,14 @@ export const User = {
     return docToUser(docRef.id, doc.data()!);
   },
 
+  /**
+   * Find a single user matching the given query.
+   * NOTE: Phone uniqueness relies on application-level checking (auth route calls
+   * findOne({ phone }) before create). Firestore has no native unique-index
+   * constraint, so a race condition is theoretically possible under high
+   * concurrency. For stronger guarantees, use a Firestore transaction when
+   * creating users.
+   */
   async findOne(query: Record<string, any>): Promise<any | null> {
     if (query._id || query.id) {
       const docRef = collections.users().doc(String(query._id || query.id));

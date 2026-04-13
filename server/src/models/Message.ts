@@ -77,8 +77,18 @@ export const Message = {
       skip(n: number) { this._skipNum = n; return this; },
       async lean() { return this.exec(); },
       async exec() {
-        const snapshot = await this._query.orderBy(this._sortField, this._sortDir).limit(this._limitNum).get();
-        return snapshot.docs.map((d: FirebaseFirestore.QueryDocumentSnapshot) => docToMessage(d.id, d.data()));
+        // Fetch without orderBy to avoid composite index requirements
+        const snapshot = await this._query.get();
+        let results = snapshot.docs.map((d: FirebaseFirestore.QueryDocumentSnapshot) => docToMessage(d.id, d.data()));
+        const field = this._sortField;
+        const dir = this._sortDir;
+        results.sort((a: any, b: any) => {
+          const aVal = a[field] instanceof Date ? a[field].getTime() : a[field];
+          const bVal = b[field] instanceof Date ? b[field].getTime() : b[field];
+          return dir === 'asc' ? (aVal > bVal ? 1 : -1) : (aVal < bVal ? 1 : -1);
+        });
+        if (this._limitNum < results.length) results = results.slice(0, this._limitNum);
+        return results;
       },
       then(resolve: any, reject: any) { return this.exec().then(resolve, reject); },
     };

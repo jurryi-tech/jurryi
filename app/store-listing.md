@@ -1,13 +1,13 @@
-# LegalSahay — Google Play Store Listing
+# Jurryi — Google Play Store Listing
 
 ## App Name
-LegalSahay — AI Legal Assistant
+Jurryi — AI Legal Assistant
 
 ## Short Description (80 chars max)
 AI-powered legal assistant for India. Get personalized legal guidance instantly.
 
 ## Full Description (4000 chars max)
-LegalSahay is your personal AI-powered legal assistant, designed specifically for Indian citizens. Whether you're dealing with a property dispute, criminal matter, family issue, consumer complaint, or any other legal concern — LegalSahay provides personalized, jurisdiction-aware legal guidance right from your phone.
+Jurryi is your personal AI-powered legal assistant, designed specifically for Indian citizens. Whether you're dealing with a property dispute, criminal matter, family issue, consumer complaint, or any other legal concern — Jurryi provides personalized, jurisdiction-aware legal guidance right from your phone.
 
 🏛️ KEY FEATURES:
 
@@ -40,7 +40,7 @@ LegalSahay is your personal AI-powered legal assistant, designed specifically fo
 - Domestic Violence Protection
 
 ⚖️ IMPORTANT DISCLAIMER:
-LegalSahay provides legal information and guidance, not legal advice. It is not a substitute for consultation with a qualified advocate. No attorney-client relationship is created through use of this app.
+Jurryi provides legal information and guidance, not legal advice. It is not a substitute for consultation with a qualified advocate. No attorney-client relationship is created through use of this app.
 
 🔒 PRIVACY:
 Your conversations are private and encrypted. We do not sell your data to third parties. You can delete your account and all associated data at any time.
@@ -57,10 +57,10 @@ legal, law, India, advocate, lawyer, legal aid, BNS, BNSS, court, FIR, bail, pro
 Everyone
 
 ## Contact Email
-support@legalsahay.com
+support@jurryi.com
 
 ## Privacy Policy URL
-https://legalsahay.com/privacy
+https://jurryi.com/privacy
 
 ## Screenshots Needed
 1. Login/Registration screen

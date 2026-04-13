@@ -83,7 +83,7 @@ export default function RegisterScreen() {
           <View style={styles.formContainer}>
             <Text style={styles.heading}>Create Account</Text>
             <Text style={styles.subheading}>
-              Join LegalSahay for personalized legal guidance
+              Join Jurryi for personalized legal guidance
             </Text>
 
             {/* Full Name */}

@@ -244,7 +244,7 @@ export default function OnboardingScreen() {
               labelStyle={styles.nextButtonLabel}
               icon="arrow-right"
             >
-              Start Using LegalSahay
+              Start Using Jurryi
             </Button>
           )}
         </View>

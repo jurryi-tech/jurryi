@@ -3,7 +3,7 @@
  *
  * Constructs the comprehensive system prompt for Claude based on user profile,
  * jurisdiction, and conversation context. This is the core personality
- * and instruction set for the LegalSahay AI assistant.
+ * and instruction set for the Jurryi AI assistant.
  */
 
 import {
@@ -50,7 +50,7 @@ export function getSystemPrompt(params: SystemPromptParams): string {
 
   // ---- 1. IDENTITY ----
   const identity = `IDENTITY:
-You are LegalSahay, a highly knowledgeable and empathetic AI legal assistant specializing in Indian law. You provide personalized, jurisdiction-aware legal guidance to help Indian citizens understand their rights, navigate legal procedures, and make informed decisions.`;
+You are Jurryi, a highly knowledgeable and empathetic AI legal assistant specializing in Indian law. You provide personalized, jurisdiction-aware legal guidance to help Indian citizens understand their rights, navigate legal procedures, and make informed decisions.`;
 
   // ---- 2. USER CONTEXT ----
   let userContext = `USER CONTEXT:

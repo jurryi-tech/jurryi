@@ -52,18 +52,21 @@ export default function ChatScreen() {
 
   const handleSendMessage = useCallback(
     async (content: string) => {
-      let conversationId = currentConversation?._id;
+      try {
+        let conversationId = currentConversation?._id;
 
-      if (!conversationId) {
-        try {
+        if (!conversationId) {
           conversationId = await createConversation('New Conversation');
-        } catch {
-          return;
         }
-      }
 
-      // Send message via store (which adds user message locally and streams)
-      await sendMessage(conversationId, content);
+        // Send message via store (which adds user message locally and streams)
+        await sendMessage(conversationId, content);
+      } catch (err) {
+        // Surface error in snackbar instead of crashing
+        const message =
+          err instanceof Error ? err.message : 'Failed to send message';
+        useChatStore.setState({ error: message });
+      }
     },
     [currentConversation, createConversation, sendMessage],
   );
@@ -86,7 +89,7 @@ export default function ChatScreen() {
       ? getProblemTypeLabel(user.primaryProblemType)
       : '';
 
-    let msg = `Namaste ${user.fullName}! I am LegalSahay, your personal legal assistant.`;
+    let msg = `Namaste ${user.fullName}! I am Jurryi, your personal legal assistant.`;
 
     if (stateName && districtName) {
       msg += ` I see you are based in ${districtName}, ${stateName}`;
@@ -146,7 +149,7 @@ export default function ChatScreen() {
       {/* Header */}
       <Appbar.Header style={styles.header} elevated>
         <Appbar.Content
-          title="LegalSahay"
+          title="Jurryi"
           titleStyle={styles.headerTitle}
         />
         <Appbar.Action

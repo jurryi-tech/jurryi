@@ -11,7 +11,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ message }) => {
   return (
     <View style={styles.container}>
       <ActivityIndicator size="large" color={COLORS.primary} />
-      <Text style={styles.title}>LegalSahay</Text>
+      <Text style={styles.title}>Jurryi</Text>
       {message ? <Text style={styles.message}>{message}</Text> : null}
     </View>
   );

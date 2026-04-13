@@ -1,20 +1,20 @@
 # Privacy Policy
 
-**LegalSahay**
+**Jurryi**
 
 **Last Updated: April 2026**
 
 ## 1. Introduction
 
-Welcome to LegalSahay ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the LegalSahay mobile application (the "App").
+Welcome to Jurryi ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the Jurryi mobile application (the "App").
 
-By using LegalSahay, you agree to the collection and use of information in accordance with this policy. If you do not agree with the terms of this Privacy Policy, please do not access or use the App.
+By using Jurryi, you agree to the collection and use of information in accordance with this policy. If you do not agree with the terms of this Privacy Policy, please do not access or use the App.
 
 ## 2. Information We Collect
 
 ### 2.1 Personal Information
 
-When you register for and use LegalSahay, we may collect the following personal information:
+When you register for and use Jurryi, we may collect the following personal information:
 
 - **Phone Number**: Used for account creation, authentication, and communication.
 - **Name**: Used to personalize your experience within the App.
@@ -59,7 +59,7 @@ Access to personal data is strictly limited to authorized personnel who require 
 
 ## 5. Third-Party Services
 
-LegalSahay integrates with the following third-party services to deliver its functionality:
+Jurryi integrates with the following third-party services to deliver its functionality:
 
 ### 5.1 Anthropic
 
@@ -96,7 +96,7 @@ You have the right to delete your account and all associated data at any time. U
 - All preferences and settings will be permanently deleted.
 - Deletion is irreversible and will be completed within 30 days of the request.
 
-To delete your account, use the account deletion option within the App settings or contact us at privacy@legalsahay.com.
+To delete your account, use the account deletion option within the App settings or contact us at privacy@jurryi.com.
 
 ### 6.3 Anonymized Data
 
@@ -129,7 +129,7 @@ If you are located in the European Union or European Economic Area, you addition
 
 ## 9. Children's Privacy
 
-LegalSahay is not intended for use by individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected personal data from a child under 18, we will take steps to delete such information promptly.
+Jurryi is not intended for use by individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected personal data from a child under 18, we will take steps to delete such information promptly.
 
 ## 10. Changes to This Privacy Policy
 
@@ -147,10 +147,10 @@ This Privacy Policy is governed by and construed in accordance with the laws of 
 
 If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:
 
-**Email**: privacy@legalsahay.com
+**Email**: privacy@jurryi.com
 
 **Grievance Officer**: You may contact our Grievance Officer at the email address above for any grievances related to the processing of your personal data. We will acknowledge your grievance within 24 hours and resolve it within 30 days.
 
 ---
 
-By using LegalSahay, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.
+By using Jurryi, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.

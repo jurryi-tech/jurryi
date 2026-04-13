@@ -5,6 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { useAuthStore } from '@/stores/authStore';
 import LoadingScreen from '@/components/common/LoadingScreen';
+import ErrorBoundary from '@/components/common/ErrorBoundary';
 
 const theme = {
   ...MD3LightTheme,
@@ -53,8 +54,13 @@ export default function RootLayout() {
 
   useEffect(() => {
     const init = async () => {
-      await loadStoredAuth();
-      setInitializing(false);
+      try {
+        await loadStoredAuth();
+      } catch (err) {
+        console.error('Failed to load stored auth:', err);
+      } finally {
+        setInitializing(false);
+      }
     };
     init();
   }, []);
@@ -63,24 +69,28 @@ export default function RootLayout() {
 
   if (initializing || isLoading) {
     return (
-      <SafeAreaProvider>
-        <PaperProvider theme={theme}>
-          <LoadingScreen message="Starting LegalSahay..." />
-        </PaperProvider>
-      </SafeAreaProvider>
+      <ErrorBoundary>
+        <SafeAreaProvider>
+          <PaperProvider theme={theme}>
+            <LoadingScreen message="Starting Jurryi..." />
+          </PaperProvider>
+        </SafeAreaProvider>
+      </ErrorBoundary>
     );
   }
 
   return (
-    <SafeAreaProvider>
-      <PaperProvider theme={theme}>
-        <StatusBar style="dark" />
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-          <Stack.Screen name="(main)" options={{ headerShown: false }} />
-          <Stack.Screen name="index" options={{ headerShown: false }} />
-        </Stack>
-      </PaperProvider>
-    </SafeAreaProvider>
+    <ErrorBoundary>
+      <SafeAreaProvider>
+        <PaperProvider theme={theme}>
+          <StatusBar style="dark" />
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+            <Stack.Screen name="(main)" options={{ headerShown: false }} />
+            <Stack.Screen name="index" options={{ headerShown: false }} />
+          </Stack>
+        </PaperProvider>
+      </SafeAreaProvider>
+    </ErrorBoundary>
   );
 }

@@ -16,7 +16,7 @@ const LanguagePreference: React.FC<LanguagePreferenceProps> = ({
     <View style={styles.container}>
       <Text style={styles.heading}>Choose your preferred language</Text>
       <Text style={styles.subheading}>
-        LegalSahay will respond in the language you select
+        Jurryi will respond in the language you select
       </Text>
 
       <View style={styles.optionsContainer}>

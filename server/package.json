@@ -1,7 +1,7 @@
 {
-  "name": "legalsahay-server",
+  "name": "jurryi-server",
   "version": "1.0.0",
-  "description": "LegalSahay API Server",
+  "description": "Jurryi API Server",
   "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",

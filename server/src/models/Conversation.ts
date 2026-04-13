@@ -1,7 +1,7 @@
 /**
  * Conversation Model — Firestore Implementation
  *
- * Represents a chat conversation between a user and the LegalSahay assistant.
+ * Represents a chat conversation between a user and the Jurryi assistant.
  * Tracks the conversation's category, jurisdiction details, status, and
  * any legal context extracted during the conversation.
  */
@@ -87,8 +87,19 @@ export const Conversation = {
       limit(n: number) { this._limitNum = n; return this; },
       async lean() { return this.exec(); },
       async exec() {
-        const snapshot = await this._query.orderBy(this._sortField, this._sortDir).limit(this._limitNum).get();
-        return snapshot.docs.map((d: FirebaseFirestore.QueryDocumentSnapshot) => docToConversation(d.id, d.data()));
+        // Fetch without orderBy to avoid requiring composite indexes
+        const snapshot = await this._query.get();
+        let results = snapshot.docs.map((d: FirebaseFirestore.QueryDocumentSnapshot) => docToConversation(d.id, d.data()));
+        // Sort in-memory
+        const field = this._sortField;
+        const dir = this._sortDir;
+        results.sort((a: any, b: any) => {
+          const aVal = a[field] instanceof Date ? a[field].getTime() : a[field];
+          const bVal = b[field] instanceof Date ? b[field].getTime() : b[field];
+          return dir === 'asc' ? (aVal > bVal ? 1 : -1) : (aVal < bVal ? 1 : -1);
+        });
+        if (this._limitNum < results.length) results = results.slice(0, this._limitNum);
+        return results;
       },
       then(resolve: any, reject: any) { return this.exec().then(resolve, reject); },
     };

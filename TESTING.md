@@ -1,4 +1,4 @@
-# LegalSahay -- Testing Guide
+# Jurryi -- Testing Guide
 
 ## 1. Running Backend Tests
 

@@ -46,7 +46,7 @@ function buildEnv(): EnvConfig {
   return {
     port: parseInt(getEnvVar('PORT', '5000'), 10),
     nodeEnv,
-    mongodbUri: mongodbUri || 'mongodb://localhost:27017/legalsahay',
+    mongodbUri: mongodbUri || 'mongodb://localhost:27017/jurryi',
     gcpProjectId: process.env.GCP_PROJECT_ID || process.env.GOOGLE_CLOUD_PROJECT || '',
     jwtSecret: jwtSecret || 'dev-jwt-secret-do-not-use-in-production',
     jwtRefreshSecret: jwtRefreshSecret || 'dev-jwt-refresh-secret-do-not-use-in-production',

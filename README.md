@@ -1,6 +1,6 @@
-# LegalSahay -- AI-Powered Legal Assistant for India
+# Jurryi -- AI-Powered Legal Assistant for India
 
-LegalSahay is a cross-platform mobile application that provides personalized, AI-powered legal guidance to Indian citizens. Built with React Native (Expo) and Node.js, it leverages Claude AI to deliver jurisdiction-aware legal information based on the user's location, language preference, and legal issue type.
+Jurryi is a cross-platform mobile application that provides personalized, AI-powered legal guidance to Indian citizens. Built with React Native (Expo) and Node.js, it leverages Claude AI to deliver jurisdiction-aware legal information based on the user's location, language preference, and legal issue type.
 
 ## Features (Stage 1)
 

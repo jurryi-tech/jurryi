@@ -1,5 +1,5 @@
 #!/bin/bash
-# LegalSahay Backend - Google Cloud Run Deployment Script
+# Jurryi Backend - Google Cloud Run Deployment Script
 #
 # Prerequisites:
 #   1. Google Cloud SDK (gcloud) installed and authenticated
@@ -12,7 +12,7 @@
 #   ./deploy.sh <project-id>
 #
 # Example:
-#   ./deploy.sh legalsahay-prod
+#   ./deploy.sh jurryi-prod
 
 set -e
 
@@ -26,7 +26,7 @@ if [ -z "$PROJECT_ID" ]; then
 fi
 
 echo "============================================"
-echo "  LegalSahay API — Google Cloud Run Deploy"
+echo "  Jurryi API — Google Cloud Run Deploy"
 echo "============================================"
 echo "Project: $PROJECT_ID"
 echo "Region:  asia-south1 (Mumbai)"
@@ -45,12 +45,12 @@ gcloud services enable artifactregistry.googleapis.com
 
 # Step 3: Build and push Docker image
 echo "[3/5] Building container image..."
-gcloud builds submit --tag gcr.io/$PROJECT_ID/legalsahay-api .
+gcloud builds submit --tag gcr.io/$PROJECT_ID/jurryi-api .
 
 # Step 4: Deploy to Cloud Run
 echo "[4/5] Deploying to Cloud Run (asia-south1 / Mumbai)..."
-gcloud run deploy legalsahay-api \
-  --image gcr.io/$PROJECT_ID/legalsahay-api \
+gcloud run deploy jurryi-api \
+  --image gcr.io/$PROJECT_ID/jurryi-api \
   --region asia-south1 \
   --platform managed \
   --allow-unauthenticated \
@@ -64,7 +64,7 @@ gcloud run deploy legalsahay-api \
 # Step 5: Get the service URL
 echo ""
 echo "[5/5] Deployment complete!"
-SERVICE_URL=$(gcloud run services describe legalsahay-api --region asia-south1 --format 'value(status.url)')
+SERVICE_URL=$(gcloud run services describe jurryi-api --region asia-south1 --format 'value(status.url)')
 echo ""
 echo "============================================"
 echo "  Your API is live at:"
@@ -72,7 +72,7 @@ echo "  $SERVICE_URL"
 echo "============================================"
 echo ""
 echo "IMPORTANT: Set your secret environment variables:"
-echo "  gcloud run services update legalsahay-api --region asia-south1 \\"
+echo "  gcloud run services update jurryi-api --region asia-south1 \\"
 echo "    --set-env-vars MONGODB_URI=<your-uri> \\"
 echo "    --set-env-vars JWT_SECRET=<your-secret> \\"
 echo "    --set-env-vars JWT_REFRESH_SECRET=<your-secret> \\"
@@ -81,5 +81,5 @@ echo "    --set-env-vars TAVILY_API_KEY=<your-key>"
 echo ""
 echo "Or use Google Secret Manager (recommended for production):"
 echo "  gcloud secrets create mongodb-uri --data-file=-"
-echo "  gcloud run services update legalsahay-api --region asia-south1 \\"
+echo "  gcloud run services update jurryi-api --region asia-south1 \\"
 echo "    --set-secrets MONGODB_URI=mongodb-uri:latest"
