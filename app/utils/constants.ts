@@ -1,6 +1,6 @@
 import Constants from 'expo-constants';
 
-export const API_BASE_URL = Constants.expoConfig?.extra?.apiUrl || 'http://localhost:5000/api';
+export const API_BASE_URL = Constants.expoConfig?.extra?.apiUrl || 'https://jurryi-api-1042325455608.asia-south1.run.app/api';
 
 export interface SelectOption {
   value: string;

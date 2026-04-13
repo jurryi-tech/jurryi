@@ -31,7 +31,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   plugins: ['expo-router', 'expo-secure-store'],
   extra: {
-    apiUrl: process.env.API_URL || 'http://localhost:5000/api',
+    apiUrl: process.env.API_URL || 'https://jurryi-api-1042325455608.asia-south1.run.app/api',
     eas: {
       projectId: '3240d010-f881-4ee0-be69-11da2e35423f',
     },

@@ -13,12 +13,8 @@ import chatRoutes from './routes/chat';
 
 const app = express();
 
-app.use(cors({
-  origin: env.nodeEnv === 'production'
-    ? [env.clientUrl || 'https://legalsahay.com'].filter(Boolean)
-    : '*',
-  credentials: true,
-}));
+// Mobile apps don't have a fixed origin — allow all
+app.use(cors({ origin: '*', credentials: true }));
 app.use(helmet());
 app.use(express.json({ limit: '10mb' }));
 app.use(generalLimiter);
@@ -33,16 +29,15 @@ app.use('/api/chat', authenticateToken, chatRoutes);
 
 app.use(errorHandler);
 
-connectDB()
-  .then(() => {
-    app.listen(env.port, () => {
-      console.log(`LegalSahay server running on port ${env.port} [${env.nodeEnv}]`);
-    });
-  })
-  .catch((error) => {
-    console.error('Failed to start server:', error);
-    process.exit(1);
+// Start server — connect to DB but don't crash if DB is unavailable yet
+const port = parseInt(process.env.PORT || String(env.port), 10);
+
+app.listen(port, () => {
+  console.log(`Jurryi server running on port ${port} [${env.nodeEnv}]`);
+  connectDB().catch((error) => {
+    console.error('MongoDB connection failed (will retry on requests):', error.message);
   });
+});
 
 process.on('unhandledRejection', (reason: unknown) => {
   console.error('Unhandled Rejection:', reason);

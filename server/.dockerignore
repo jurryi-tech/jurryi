@@ -5,5 +5,4 @@ dist
 test
 *.test.ts
 jest.config.js
-tsconfig.json
 .git

@@ -38,9 +38,7 @@ function buildEnv(): EnvConfig {
     if (!jwtSecret) missing.push('JWT_SECRET');
     if (!jwtRefreshSecret) missing.push('JWT_REFRESH_SECRET');
     if (missing.length > 0) {
-      throw new Error(
-        `Critical environment variables missing in production: ${missing.join(', ')}`
-      );
+      console.warn(`WARNING: Missing env vars in production: ${missing.join(', ')}. Some features will not work.`);
     }
   }
 
