@@ -1,25 +1,37 @@
-import mongoose from 'mongoose';
+/**
+ * Google Cloud Firestore Database Configuration
+ * On Cloud Run, authentication happens automatically via the service account.
+ * Locally, use GOOGLE_APPLICATION_CREDENTIALS env var.
+ */
+
+import { Firestore } from '@google-cloud/firestore';
 import { env } from './env';
+
+let db: Firestore;
+
+export function getDb(): Firestore {
+  if (!db) {
+    db = new Firestore({
+      projectId: env.gcpProjectId || undefined,
+    });
+  }
+  return db;
+}
 
 export async function connectDB(): Promise<void> {
   try {
-    const conn = await mongoose.connect(env.mongodbUri);
-    console.log(`[Database] MongoDB connected: ${conn.connection.host}`);
-
-    mongoose.connection.on('disconnected', () => {
-      console.warn('[Database] MongoDB disconnected. Attempting to reconnect...');
-    });
-
-    mongoose.connection.on('error', (err) => {
-      console.error('[Database] MongoDB connection error:', err.message);
-    });
-
-    mongoose.connection.on('reconnected', () => {
-      console.log('[Database] MongoDB reconnected successfully.');
-    });
-  } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
-    console.error(`[Database] Failed to connect to MongoDB: ${message}`);
-    throw error;
+    const firestore = getDb();
+    // Test the connection by listing collections
+    await firestore.listCollections();
+    console.log('Connected to Google Cloud Firestore');
+  } catch (error: any) {
+    console.error('Firestore connection failed:', error.message);
   }
 }
+
+// Collection references
+export const collections = {
+  users: () => getDb().collection('users'),
+  conversations: () => getDb().collection('conversations'),
+  messages: () => getDb().collection('messages'),
+};

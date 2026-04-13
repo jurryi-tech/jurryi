@@ -80,7 +80,7 @@ const onboardingSchema = z.object({
  */
 router.get('/profile', async (req: AuthRequest, res: Response) => {
   try {
-    const user = await User.findById(req.userId);
+    const user = await User.findById(req.userId!);
     if (!user) {
       res.status(404).json({ error: 'User not found' });
       return;
@@ -128,7 +128,7 @@ router.patch('/profile', async (req: AuthRequest, res: Response) => {
     }
 
     const user = await User.findByIdAndUpdate(
-      req.userId,
+      req.userId!,
       { $set: updateData },
       { new: true, runValidators: true }
     );
@@ -173,7 +173,7 @@ router.post('/onboarding', async (req: AuthRequest, res: Response) => {
     if (problemDescription !== undefined) updateData.problemDescription = problemDescription;
 
     const user = await User.findByIdAndUpdate(
-      req.userId,
+      req.userId!,
       { $set: updateData },
       { new: true, runValidators: true }
     );
@@ -200,12 +200,12 @@ router.delete('/account', async (req: AuthRequest, res: Response) => {
     const userId = req.userId;
 
     // Delete all user's messages (via conversations)
-    const conversations = await Conversation.find({ userId }).select('_id');
-    const conversationIds = conversations.map((c: any) => c._id);
-
-    await Message.deleteMany({ conversationId: { $in: conversationIds } });
+    const conversationList = await Conversation.find({ userId });
+    for (const c of conversationList) {
+      await Message.deleteMany({ conversationId: c._id });
+    }
     await Conversation.deleteMany({ userId });
-    await User.findByIdAndDelete(userId);
+    await User.findByIdAndDelete(userId!);
 
     res.json({ message: 'Account and all associated data deleted successfully' });
   } catch (error) {

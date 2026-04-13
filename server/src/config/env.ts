@@ -7,6 +7,7 @@ interface EnvConfig {
   port: number;
   nodeEnv: string;
   mongodbUri: string;
+  gcpProjectId: string;
   jwtSecret: string;
   jwtRefreshSecret: string;
   jwtExpiresIn: string;
@@ -46,6 +47,7 @@ function buildEnv(): EnvConfig {
     port: parseInt(getEnvVar('PORT', '5000'), 10),
     nodeEnv,
     mongodbUri: mongodbUri || 'mongodb://localhost:27017/legalsahay',
+    gcpProjectId: process.env.GCP_PROJECT_ID || process.env.GOOGLE_CLOUD_PROJECT || '',
     jwtSecret: jwtSecret || 'dev-jwt-secret-do-not-use-in-production',
     jwtRefreshSecret: jwtRefreshSecret || 'dev-jwt-refresh-secret-do-not-use-in-production',
     jwtExpiresIn: getEnvVar('JWT_EXPIRES_IN', '15m'),

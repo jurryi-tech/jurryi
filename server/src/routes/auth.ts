@@ -82,8 +82,7 @@ router.post('/register', async (req: AuthRequest, res: Response) => {
     const accessToken = generateAccessToken(String(user._id));
     const refreshToken = generateRefreshToken(String(user._id));
 
-    user.refreshToken = refreshToken;
-    await user.save();
+    await User.findByIdAndUpdate(user._id, { refreshToken });
 
     res.status(201).json({
       user: {
@@ -118,7 +117,7 @@ router.post('/login', async (req: AuthRequest, res: Response) => {
 
     const { phone, password } = validation.data;
 
-    const user = await User.findOne({ phone }).select('+passwordHash +refreshToken');
+    const user = await User.findOne({ phone });
     if (!user) {
       res.status(401).json({ error: 'Invalid credentials' });
       return;
@@ -133,9 +132,7 @@ router.post('/login', async (req: AuthRequest, res: Response) => {
     const accessToken = generateAccessToken(String(user._id));
     const refreshToken = generateRefreshToken(String(user._id));
 
-    user.refreshToken = refreshToken;
-    user.lastActiveAt = new Date();
-    await user.save();
+    await User.findByIdAndUpdate(user._id, { refreshToken, lastActiveAt: new Date() });
 
     res.json({
       user: {
@@ -183,7 +180,7 @@ router.post('/refresh', async (req: AuthRequest, res: Response) => {
       return;
     }
 
-    const user = await User.findById(decoded.userId).select('+refreshToken');
+    const user = await User.findById(decoded.userId);
 
     if (!user || user.refreshToken !== refreshToken) {
       res.status(401).json({ error: 'Invalid refresh token' });
@@ -205,7 +202,7 @@ router.post('/refresh', async (req: AuthRequest, res: Response) => {
  */
 router.post('/logout', authenticateToken, async (req: AuthRequest, res: Response) => {
   try {
-    await User.findByIdAndUpdate(req.userId, { refreshToken: '' });
+    await User.findByIdAndUpdate(req.userId!, { refreshToken: '' });
     res.json({ message: 'Logged out successfully' });
   } catch (error) {
     console.error('Logout error:', error);

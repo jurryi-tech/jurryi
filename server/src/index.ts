@@ -13,6 +13,9 @@ import chatRoutes from './routes/chat';
 
 const app = express();
 
+// Cloud Run sits behind a load balancer — trust proxy for rate limiting
+app.set('trust proxy', true);
+
 // Mobile apps don't have a fixed origin — allow all
 app.use(cors({ origin: '*', credentials: true }));
 app.use(helmet());
@@ -35,7 +38,7 @@ const port = parseInt(process.env.PORT || String(env.port), 10);
 app.listen(port, () => {
   console.log(`Jurryi server running on port ${port} [${env.nodeEnv}]`);
   connectDB().catch((error) => {
-    console.error('MongoDB connection failed (will retry on requests):', error.message);
+    console.error('Firestore connection failed (will retry on requests):', error.message);
   });
 });
 

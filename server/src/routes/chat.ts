@@ -42,8 +42,7 @@ const SEARCH_TRIGGER_REGEX = /\b(latest|current|recent|2024|2025|2026|new law|am
  */
 router.get('/conversations', async (req: AuthRequest, res: Response, next: NextFunction) => {
   try {
-    const conversations = await Conversation.find({ userId: req.userId })
-      .select('_id title category status createdAt updatedAt')
+    const conversations = await Conversation.find({ userId: req.userId! })
       .sort({ updatedAt: -1 })
       .lean();
 
@@ -61,14 +60,14 @@ router.post('/conversations', async (req: AuthRequest, res: Response, next: Next
   try {
     const data = createConversationSchema.parse(req.body);
 
-    const user = await User.findById(req.userId);
+    const user = await User.findById(req.userId!);
     if (!user) {
       res.status(404).json({ error: 'User not found' });
       return;
     }
 
     const conversation = await Conversation.create({
-      userId: req.userId,
+      userId: req.userId!,
       title: data.title || 'New Conversation',
       category: data.category || '',
       jurisdiction: {
@@ -77,7 +76,7 @@ router.post('/conversations', async (req: AuthRequest, res: Response, next: Next
       },
     });
 
-    await User.findByIdAndUpdate(req.userId, {
+    await User.findByIdAndUpdate(req.userId!, {
       $inc: { conversationCount: 1 },
       lastActiveAt: new Date(),
     });
@@ -96,8 +95,8 @@ router.get('/conversations/:id', async (req: AuthRequest, res: Response, next: N
   try {
     const conversation = await Conversation.findOne({
       _id: req.params.id,
-      userId: req.userId,
-    }).lean();
+      userId: req.userId!,
+    });
 
     if (!conversation) {
       res.status(404).json({ error: 'Conversation not found' });
@@ -138,7 +137,7 @@ router.post(
       // Verify conversation ownership
       const conversation = await Conversation.findOne({
         _id: req.params.id,
-        userId: req.userId,
+        userId: req.userId!,
       });
 
       if (!conversation) {
@@ -147,7 +146,7 @@ router.post(
       }
 
       // Load user profile for personalized system prompt
-      const user = await User.findById(req.userId);
+      const user = await User.findById(req.userId!);
       if (!user) {
         res.status(404).json({ error: 'User not found' });
         return;
@@ -171,9 +170,9 @@ router.post(
 
       // Build conversation history for Claude (exclude system messages)
       const conversationHistory: MessageInput[] = recentMessages
-        .filter((msg) => msg.role !== 'system')
+        .filter((msg: any) => msg.role !== 'system')
         .slice(0, -1) // Exclude the just-saved user message (we'll pass it separately)
-        .map((msg) => ({
+        .map((msg: any) => ({
           role: msg.role as 'user' | 'assistant',
           content: msg.content,
         }));
@@ -277,7 +276,7 @@ router.post(
         }
 
         // Update user last active
-        await User.findByIdAndUpdate(req.userId, { lastActiveAt: new Date() });
+        await User.findByIdAndUpdate(req.userId!, { lastActiveAt: new Date() });
       } catch (streamError) {
         console.error('Claude streaming error:', streamError);
         if (!clientDisconnected) {
@@ -318,7 +317,7 @@ router.get(
     try {
       const conversation = await Conversation.findOne({
         _id: req.params.id,
-        userId: req.userId,
+        userId: req.userId!,
       });
 
       if (!conversation) {
@@ -345,7 +344,7 @@ router.delete('/conversations/:id', async (req: AuthRequest, res: Response, next
   try {
     const conversation = await Conversation.findOneAndDelete({
       _id: req.params.id,
-      userId: req.userId,
+      userId: req.userId!,
     });
 
     if (!conversation) {
@@ -356,7 +355,7 @@ router.delete('/conversations/:id', async (req: AuthRequest, res: Response, next
     await Message.deleteMany({ conversationId: conversation._id });
 
     // Decrement conversation count (don't go below 0)
-    await User.findByIdAndUpdate(req.userId, {
+    await User.findByIdAndUpdate(req.userId!, {
       $inc: { conversationCount: -1 },
     });
 
