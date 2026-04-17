@@ -96,7 +96,7 @@ You have the right to delete your account and all associated data at any time. U
 - All preferences and settings will be permanently deleted.
 - Deletion is irreversible and will be completed within 30 days of the request.
 
-To delete your account, use the account deletion option within the App settings or contact us at privacy@jurryi.com.
+To delete your account, use the account deletion option within the App settings or contact us at contact@jurryi.com.
 
 ### 6.3 Anonymized Data
 
@@ -147,7 +147,7 @@ This Privacy Policy is governed by and construed in accordance with the laws of 
 
 If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:
 
-**Email**: privacy@jurryi.com
+**Email**: contact@jurryi.com
 
 **Grievance Officer**: You may contact our Grievance Officer at the email address above for any grievances related to the processing of your personal data. We will acknowledge your grievance within 24 hours and resolve it within 30 days.
 

@@ -57,10 +57,13 @@ legal, law, India, advocate, lawyer, legal aid, BNS, BNSS, court, FIR, bail, pro
 Everyone
 
 ## Contact Email
-support@jurryi.com
+contact@jurryi.com
 
 ## Privacy Policy URL
-https://jurryi.com/privacy
+https://jurryi-tech.github.io/jurryi/
+
+## Terms of Service URL
+https://jurryi-tech.github.io/jurryi/#terms
 
 ## Screenshots Needed
 1. Login/Registration screen

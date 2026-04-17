@@ -143,7 +143,7 @@ Any disputes arising out of or relating to these Terms or your use of the App sh
 
 ### 9.3 Informal Resolution
 
-Before filing any formal legal action, you agree to attempt to resolve any dispute informally by contacting us at support@jurryi.com. We will attempt to resolve the dispute informally within 30 days.
+Before filing any formal legal action, you agree to attempt to resolve any dispute informally by contacting us at contact@jurryi.com. We will attempt to resolve the dispute informally within 30 days.
 
 ## 10. Severability
 
@@ -157,7 +157,7 @@ These Terms, together with our Privacy Policy, constitute the entire agreement b
 
 If you have any questions or concerns about these Terms of Service, please contact us at:
 
-**Email**: support@jurryi.com
+**Email**: contact@jurryi.com
 
 ---
 

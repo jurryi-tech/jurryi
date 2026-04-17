@@ -48,3 +48,9 @@ coverage/
 # Misc
 *.log
 *.tmp
+
+# Claude Code worktrees (orphan directories from prior sessions)
+.claude/worktrees/
+
+# Google Play service account (never commit)
+app/google-service-account.json
